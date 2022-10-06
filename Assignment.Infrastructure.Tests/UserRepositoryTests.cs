@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Assignment.Core;
 
 
+
 public class UserRepositoryTests
 {
 
@@ -54,7 +55,7 @@ public class UserRepositoryTests
 
     public void CreateGivenUser(){
         //Arrange
-        var (Response, UserId) = _repository.Create(new UserCreateDTO("Hej", "abe@itu.dk"));
+        var (Response, UserId) = _repository.Create(new UserCreateDTO("ITU", "abe@itu.dk"));
 
         //Assert
         Response.Should().Be(Response.Created);

@@ -10,7 +10,7 @@ public class UserRepository
     }
     public (Response Response, int UserId) Create(UserCreateDTO user)
     {
-        var entity = _context.Users.FirstOrDefault(user => user.Name == user.Name);
+        var entity = _context.Users.FirstOrDefault(u => u.Name == user.Name);
         Response response;
 
         if(entity == null)
