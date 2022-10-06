@@ -1,14 +1,11 @@
 namespace Assignment.Infrastructure;
 
+
 public class Tag
 {
     public int Id { get; set; }
-    public string Name { get; set; }
-    public ICollection<WorkItem> WorkItems { get; set; }
 
-    public Tag(string name)
-    {
-        Name = name;
-        WorkItems = new HashSet<WorkItem>();
-    }
+    public string Name { get; set; } = null!;
+
+    public virtual ICollection<WorkItem> WorkItems { get; set; } = null!; //many-to-many like a join statemen
 }

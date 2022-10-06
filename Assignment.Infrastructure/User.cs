@@ -3,17 +3,11 @@ namespace Assignment.Infrastructure;
 public class User
 {
     public int Id { get; set; }
-    public string Name { get; set; }
 
-    [EmailAddress]
-    public string Email { get; set; }
+    public string Name { get; set; } = null!;
 
-    public ICollection<WorkItem> Items { get; set; }
+    public string Email { get; set; } = null!;
 
-    public User(string name, string email)
-    {
-        Name = name;
-        Email = email;
-        Items = new HashSet<WorkItem>();
-    }
+    public virtual ICollection<WorkItem> WorkItems { get; set; } = null!;
+
 }
